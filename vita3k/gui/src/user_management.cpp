@@ -240,12 +240,10 @@ void open_user(GuiState &gui, EmuEnvState &emuenv) {
     gui.vita_area.information_bar = true;
     gui.vita_area.start_screen = true;
 
+#ifndef NDEBUG
 #ifdef USE_VITA3K_UPDATE
-    std::thread update_vita3k_thread([&gui]() {
-        if (init_vita3k_update(gui))
-            gui.help_menu.vita3k_update = true;
-    });
-    update_vita3k_thread.detach();
+    LOG_ERROR("UPDATING");
+#endif
 #endif
 }
 
