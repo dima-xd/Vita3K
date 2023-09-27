@@ -241,9 +241,7 @@ void open_user(GuiState &gui, EmuEnvState &emuenv) {
     gui.vita_area.start_screen = true;
 
 #ifndef NDEBUG
-#ifdef USE_VITA3K_UPDATE
     LOG_ERROR("UPDATING");
-#endif
 #endif
 }
 
